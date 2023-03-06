@@ -1,0 +1,295 @@
+/* global css */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Maven Pro', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+ul,
+li,
+a,
+p,
+h1,
+h2,
+h3,
+h4 {
+    margin: 0px;
+    padding: 0px;
+}
+
+img{
+    width: 100%;
+    display: block;
+}
+
+/* input global class */
+.input_control{
+    height: 100%;
+    width: 100%;
+    border: none;
+    outline: none;
+}
+
+/* select icon change */
+select {
+    appearance: none;
+    background: url(../image/chevron.png);
+    background-size: auto;
+    background-position: 96% 50%;
+    background-repeat: no-repeat;
+}
+/* btn class */
+.main_btn{
+    border: none;
+    background: transparent;
+}
+/* section padding */
+.section_padding{
+    padding: 30px 0px;
+}
+
+/* btn hover global */
+.btnHover{
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btnHover::after{
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    background: var(--textColor);
+    transition: var(--transition);
+    z-index: -1;
+}
+
+.btnHover:hover::after{
+    left: 0px;
+}
+
+/* container */
+.container {
+    max-width: 1320px;
+    width: 100%;
+    margin: 0px auto;
+    padding: 0px 15px;
+}
+
+/* selection color change */
+::selection{
+    background: var(--textColor);
+    color: var(--globalColor);
+}
+
+/* html shooth */
+html{
+    scroll-behavior: smooth;
+}
+
+/* section title */
+.section_titlle{
+    max-width: 980px;
+    width: 100%;
+    margin: 0px auto 30px;
+}
+
+.sectitle_heading {
+    margin-bottom: 10px;
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    line-height: 42px;
+    color: var(--textColor);
+}
+
+.sectitle_headingSub{
+    color: var(--mainColor);
+}
+
+.sectitle_text {
+    color: var(--primaryColor);
+    font-weight: 500;
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.btn_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+/* color variable */
+:root{
+    --mainColor:#26c644;
+    --primaryColor: #4a5052;
+    --rating: #F7B300;
+    --textColor: #1E272E;
+    --bgColor: #F6F9FC;
+    --globalColor: #FFFFFF;
+
+    --dangerBg: #fff5f8;
+    --dangerColor: #f1416c;
+    --trustColor: #06a0f7;
+    --trustBg: #f1faff;
+    --mediumBg : #f8f5ff;
+    --mediumColor: #7239ea;
+    --successBg: #e8fff3;
+    --successColor: #41bc79;
+    --LowColor: #111a4d;
+    --LowBg: #eff2f5;
+
+    --transition: 0.3s linear all;
+}
+
+/* color class */
+
+.danger{
+    color: var(--dangerColor);
+    background: var(--dangerBg);
+}
+
+.trust{
+    color: var(--trustColor);
+    background: var(--trustBg);
+}
+
+.medium{
+    color: var(--mediumColor);
+    background: var(--mediumBg);
+}
+
+.success{
+    color: var(--successColor);
+    background: var(--successBg);
+}
+
+.low{
+    color: var(--LowColor);
+    background: var(--bgColor);
+}
+
+/* toggole btn */
+
+.toggle_nav {
+    cursor: pointer;
+    display: block;
+    position: relative;
+    z-index: 9;
+}
+
+.toggle_nav {
+    cursor: pointer;
+    display: block;
+    position: fixed;
+    z-index: 9;
+    right: 20px;
+    top: 69px;
+}
+
+.sticky~.toggle_nav {
+    top: 29px;
+}
+
+.toggle_nav ul{
+    position: relative;
+    height: 18px;
+    width: 30px;
+}
+
+.toggle_nav ul li{
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: var(--mainColor);
+    left: 0px;
+    transition: var(--transition);
+}
+
+.toggle_nav ul li:first-child{
+    top: 0px;
+}
+
+.toggle_nav ul li:nth-child(2){
+    top: 50%;
+}
+
+.toggle_nav ul li:last-child {
+    top: 98%;
+}
+
+.activeToggle ul li:first-child{
+    top: 50%;
+    transform: rotate(-45deg);
+}
+
+.activeToggle ul li:nth-child(2){
+    visibility: hidden;
+    opacity: 0;
+}
+
+.activeToggle ul li:last-child{
+    top: 50%;
+    transform: rotate(45deg);
+}
+
+/* custom slick slider */
+
+.employer_slider .slick-prev, .employer_slider .slick-next {
+    z-index: 9;
+    display: grid;
+    place-content: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background: var(--LowBg);
+    z-index: 1;
+}
+
+.employer_slider .slick-next:before,
+.employer_slider .slick-prev:before {
+    content: '';
+    height: 10px;
+    width: 10px;
+    margin-right: 2px;
+    border-top: 2px solid var(--mainColor);
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid var(--mainColor);
+    border-right: 2px solid transparent;
+    transform: rotate(135deg);
+}
+
+.employer_slider .slick-prev:before {
+    transform: rotate(-45deg);
+    margin-left: 2px;
+    margin-right: 0px;
+}
+
+.employer_slider .slick-prev {
+    top: -50px;
+    left: auto;
+    right: 50px;
+}
+
+.employer_slider .slick-next {
+    top: -50px;
+    right: 0px;
+    left: auto;
+}
+
+/* slick slider custom cahnge */
