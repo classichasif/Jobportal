@@ -76,7 +76,39 @@ subNavToggle.addEventListener("click", function(){
         });
       });
 
-    //   aos
+    $(document).ready(function () {
+        $(".blog_slider").slick({
+          dots: false,
+          autoplay: false,
+          arrows: true,
+          infinite: true,
+          slidesToShow: 3,
+          speed: 1000,
+          responsive: [
+            {
+              breakpoint: 1240,
+              settings: {
+                slidesToShow: 2,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+          ]
+        });
+      });
 
-      
+    //   socket year
+    let socketYear = document.getElementById("socket_year")
+    let PresentYear = (year) =>{
+      let date = new Date()
+      let PreYear = date.getFullYear()
+      year.innerHTML = PreYear
+    }
+    PresentYear(socketYear)
       
