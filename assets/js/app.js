@@ -103,6 +103,33 @@ subNavToggle.addEventListener("click", function(){
         });
       });
 
+    $(document).ready(function () {
+        $(".testimonial_slider").slick({
+          dots: false,
+          autoplay: true,
+          arrows: false,
+          infinite: true,
+          slidesToShow: 3,
+          speed: 1000,
+          responsive: [
+            {
+              breakpoint: 1240,
+              settings: {
+                slidesToShow: 2,
+                infinite: true,
+                dots: true
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+              }
+            }
+          ]
+        });
+      });
+
     //   socket year
     let socketYear = document.getElementById("socket_year")
     let PresentYear = (year) =>{
@@ -111,4 +138,46 @@ subNavToggle.addEventListener("click", function(){
       year.innerHTML = PreYear
     }
     PresentYear(socketYear)
+
+      // accordion js
+  
+      const faqHeader = document.getElementsByClassName("faq_header");
       
+      [...faqHeader].forEach((headerInner,index) => {
+        const faqItem = document.getElementsByClassName("faq_item")[index];
+        headerInner.addEventListener("click", function(){
+          let foundClass = document.querySelector(".activeFaq")
+          if(!faqItem.classList.contains("activeFaq") && foundClass){
+            foundClass.classList.remove("activeFaq")
+          }
+          faqItem.classList.toggle("activeFaq")
+        })
+      });
+
+    // view_change btn
+    const viewChange = document.getElementById("view_change")
+    const gridBtn = document.getElementById("grid_btn")
+    const listBtn = document.getElementById("list_btn")
+
+    gridBtn.addEventListener("click", () => {
+      viewChange.classList.add("grid_view")
+      viewChange.classList.remove("list_view")
+    })
+
+    listBtn.addEventListener("click", () => {
+      viewChange.classList.add("list_view")
+      viewChange.classList.remove("grid_view")
+    })
+
+    // custom range
+
+    const mySlider = document.getElementById("mySlider");
+
+    const sliderValue = document.getElementById("slider-value");
+
+    function slider(){
+        valPercent = (mySlider.value / mySlider.max)*100;
+        mySlider.style.background = `linear-gradient(to right, var(--mainColor) ${valPercent}%, #d5d5d5 ${valPercent}%)`;
+        sliderValue.textContent = mySlider.value;
+    }
+    slider();

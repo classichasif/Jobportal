@@ -42,6 +42,11 @@
     .footer_col{
         width: calc(50% - 12px);
     }
+
+    .innerBanner_heading{
+        font-size: 24px;
+        line-height: 36px;
+    }
     
 }
 
@@ -86,9 +91,23 @@
     .blog_item{
         margin: 0px 12px;
     }
-
     .blog_image {
         height: 260px;
+    }
+    .innerBanner_heading{
+        font-size: 32px;
+        line-height: 48px;
+    }
+
+    .grid_view .job_post{
+        width: calc(50% - 12px);
+    }
+    .pricing_card{
+        width: calc(50% - 12px);
+    }
+
+    .faq_item {
+        width: calc(50% - 12px);
     }
 }
 
@@ -195,6 +214,20 @@
     .newsletter_content {
         padding: 60px 20px 80px 20px;
     }
+
+    .filter_wrapper{
+        flex-direction: row;
+    }
+    
+    .filter_sidebar{
+        width: 320px;
+        position: sticky;
+        top: 100px;
+    }
+
+    .filter_body{
+        width: calc(100% - 344px);
+    }
 }
 
 @media(min-width: 1240px){
@@ -240,5 +273,10 @@
     
     .job_location_item:nth-child(4){
         grid-column: span 2;
+    }
+
+    .pricing_card {
+        width: calc(33.33% - 16px);
+        padding: 40px 30px;
     }
 }

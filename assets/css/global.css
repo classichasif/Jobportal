@@ -9,6 +9,9 @@
 a {
     text-decoration: none;
 }
+a:focus{
+    border: 1px dotted var(--mainColor);
+}
 ul{
     list-style: none;
 }
@@ -103,9 +106,6 @@ html{
     max-width: 980px;
     width: 100%;
     margin: 0px auto 30px;
-}
-
-section{
     overflow: hidden;
 }
 
@@ -141,9 +141,7 @@ section{
 /* color variable */
 :root{
     --mainColor:#26c644;
-    /* --mainColor:#00C49A; */
-    /* --mainColor: #5B1865; */
-    --primaryColor: #4a5052;
+    /* --mainColor:#3C65F5; */
     --primaryColor: #7c929a;
     --rating: #F7B300;
     --textColor: #1E272E;
@@ -155,12 +153,17 @@ section{
     --trustBg: #f1faff;
     --mediumBg : #f8f5ff;
     --mediumColor: #7239ea;
-    --successBg: #e8fff3;
-    --successColor: #41bc79;
+    --successBg: rgb(16 123 255 / 10%);
+    --successColor: #107bff;
     --LowColor: #111a4d;
-    --LowBg: #eff2f5;
-
+    --LowBg: #e5eef7;
+    --borderColor: 1px solid rgb(30 39 46 / 10%);
     --transition: 0.3s linear all;
+}
+
+/* MB 15PX */
+.mar-b{
+    margin-bottom: 15px;
 }
 
 /* color class */
@@ -187,7 +190,7 @@ section{
 
 .low{
     color: var(--LowColor);
-    background: var(--bgColor);
+    background: var(--LowBg);
 }
 
 /* toggole btn */
@@ -264,7 +267,7 @@ section{
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    background: var(--LowBg);
+    background: var(--bgColor);
     z-index: 1;
 }
 
@@ -305,3 +308,20 @@ section{
 }
 
 /* slick slider custom cahnge */
+
+/* breacrum global css */
+
+.breadcrumb_cover{
+    background: var(--bgColor);
+}
+
+.breadcrumb_title{
+    max-width: 700px;
+    width: 100%;
+    margin: 0px;
+}
+
+.breadcrumb_title .sectitle_heading,
+.breadcrumb_title .sectitle_text{
+    text-align: left;
+}
